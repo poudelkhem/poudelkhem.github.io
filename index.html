@@ -1,125 +1,389 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Khem Narayan Poudel" />
-    <meta name="description" content="Personal blog and resume">
-    <link rel="shortcut icon" href="static/img/khempoudel.ico">
+<html>
+    
+    <head>
+        <meta charset="utf-8"/>
+        <title>[ Alemayehu @ WUSTL ]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="css/font-awesome.min.css"/>
+        
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+        
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+         <script src="js/html5shiv.js"></script>
+         <script src="js/respond.min.js"></script>
+         <![endif]-->
+        
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- http://getbootstrap.com/customize/ change "@screen-sm" -> "@screen-md" in @grid-float-breakpoint -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/menucollapse.js"></script>
+        <script type="text/javascript" src="js/arrow78.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+    </head>
+    
+    <body id="page-top" class="index">
+        
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button id="button2" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span><a href="https://wustl.edu/"><img border="0" width="400" src="images/washu.png"/></a></span>
+                </div>
+                
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Home<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a onclick="javascript:reset_menus();$('#tab-intro-content').show();" href="#intro">Introduction</a></li>
+                                <li><a href="cv.html">CV (Web)</a></li>
+                                <li><a target="_blank" href="aabrar.pdf">CV (PDF)</a></li>
+                            </ul>
+                        </li>
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-Publications-content').show();" href="#publications">Publications</a>
+                        </li>
+						
+						<li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-projects-content').show();" href="#projects">Projects</a>
+           
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-awards-content').show();" href="#awards">Awards</a>
+                        </li>
 
-    <title>Khem Narayan Poudel</title>
-	
-    <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-    crossorigin="anonymous">
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-service-content').show();" href="#service">Service</a>
+                        </li>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-	<!-- Custom styles for this template -->
-    <link href="static/css/main.css" rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link href="static/css/bootstrap.icon-large.min.css" rel="stylesheet">
-
-    <!-- Google Analytics -->
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', '', 'auto');
-  ga('send', 'pageview');
-
-</script>
-  </head>
-  <!-- Main Body-->
-  <body>
-  <!-- Wrap all page content here -->
-  <div id="wrap">
-    <!-- Navbar header -->
-    <nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/"><i class="fa fa-home"></i>   </a>
-	  <a class="navbar-brand" href="http://github.com/poudelkhem" style="text-align:center;" target="_blank"><i class="fa fa-github"></i></a>
-	  <a class="navbar-brand" href="https://scholar.google.com/citations?user=OcbmdOgAAAAJ&hl=en" target="_blank"><i class="fa fa-google"></i></a>
-	  <a class="navbar-brand" href="https://www.linkedin.com/in/khem-narayan-poudel-24bb1279/" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </div>
-    <div id="navbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="blog.html">BLOG</a></li>
-        <li><a href="research.html">RESEARCH</a></li>
-        <li><a href="projects.html">PROJECTS</a></li>
-        <li><a href="resume.html" target="_blank">RESUME</a></li>
-        <!-- <li><a href="cv.html">CV</a></li> -->
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-    <section id="about">
-	<div class="container">
-	  <div class="avatar">
-		<img class="img-circle" src="static/img/khempoudel.jpg" alt="Responsive image">
-	  </div>
-	  <h4>I'm <strong>Khem Narayan Poudel </strong>,  student in the <a href="http://www.mtsu.edu/coms/" target="_blank">Computational Science Program</a> at <a href="http://www.mtsu.edu/" target="_blank">Middle Tennessee State University</a>. My research is in computational optics. I design and model new  MLS (Maximum length sequence)  multilayer and grating structure  that support Bloch surface waves for applications in the field of bio-sensing, waveguide design, slow-light devices, and other surface non-linear optical phenomena.</h3>
-	  <h4>Besides my research, I am interested in Cloud Computing and data science.</h4>
-	  <h4>These are my ongoing projects <a href="/projects.html"> Current projects</a>.</h4>
-	  <h4>For my detail information; professional <a href="resume.html" target="_blank">Resume</a>.</h4>
-	  <h4>Feel free to contact me at <a href="mailto:knparjun@gmail.com">email</a>.</h4>
-	  <!--<div class="social">
-<nav class="navbar navbar-cemter">
-  <div class="container">
-    <div class="navbar-center">
-    <h4>
-	  <a class="navbar-brand" href="http://github.com/vijaykoju" style="text-align:center;" target="_blank"><i class="fa fa-github"></i></a>
-	  <a href="http://twitter.com/biomadeira"><i class="fa fa-twitter"></i></a>
-	  <a class="navbar-brand" href="http://linkedin.com/in/vijaykoju" target="_blank"><i class="fa fa-linkedin"></i></a>
-	  <a class="navbar-brand" href="https://scholar.google.com/citations?user=Zlna_xYAAAAJ&hl=en" target="_blank"><i class="fa fa-google"></i></a>
-    </h4>
-</div>
-</div>
-</nav>
--->
-
-	</div>
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#tab-contact-content').show();" href="#contact">Contact</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a onclick="javascript:reset_menus();$('#bs-example-navbar-collapse-2').toggle();">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+                
+                
+                <div class="collapse" id="bs-example-navbar-collapse-2">
+                    <gcse:search></gcse:search>
+                        </div>
+                
+            </div><!-- /.container-fluid -->
+        </nav>
+        
+        <section>
+            <!-- Place this tag where you want the search results to render -->
+            <gcse:searchresults-only></gcse:searchresults-only>
+                </section>
+        
+		
+		<section>
+    <!-- Place this tag where you want the search results to render -->
+    <gcse:searchresults-only></gcse:searchresults-only>
 </section>
 
 
 
-  </div>
-  <!-- Footer -->
-  <footer>
-    <div id="footer">
-        <div class="container">
-            <p class="text-muted">© All rights reserved. Powered by <a href="http://jekyllrb.com/">Jekyll</a> and
-            <a href="http://www.github.com/biomadeira/sustain">sustain</a> with ♥</p>
-        </div>
-    </div>
-</footer>
-<div class="footer"></div>
 
-  
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
-    integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
-    crossorigin="anonymous"></script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="static/js/docs.min.js"></script>
-    <script src="static/js/main.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+
+<!-- Home Section -->
+<section id="home" style="margin-top:40px">
+<div class="container">
+        
+
+		<div align="center" class="col-md-4">
+                <a target="_blank" href="images/aabrar.jpg">
+                        <img id="mobile-img" src="images/aabrar.jpg" width="290" border="0" height="304" alt=""></a>
+        </div>
+		
+		<div align="left" class="col-md-8">
+            <h2>Alemayehu Solomon Abrar
+			 <h5><i>Looking for Full-time Positions</i></h5> 
+            <h3><b> PhD Student of Electrical Engineering</b><br>
+            <a href="https://www.wustl.edu/">Washington University in St. Louis</a><br>
+			<script language="JavaScript">
+				<!--
+				document.write("&nbsp;");
+				spiderjam('alemayehusolomon','wustl.edu');
+				-->
+				</script><br/>
+			<!-- SPAN Lab: <a target="_blank" href="https://span.engineering.wustl.edu/">https://span.engineering.wustl.edu/</a><br>-->
+			
+		</h4>
+		<h4><i>Expertise: Signal Processing, Embedded <br>Software &amp; Wireless Networks</i> <a href="#intro" onclick="javascript:reset_menus();$('#tab-intro-content').show();" class="btn-primary btn-xs">&raquo;</a><br></h4>
+		
+			    <br/>
+		<a href="https://www.linkedin.com/in/aleksol"><span class="fa-stack fa-2x"><i style="color:black;" class="fa fa-linkedin"></i></span></a>
+		<a href="https://github.com/Aleksol"><span class="fa-stack fa-2x"><i style="color:black;" class="fa fa-github"></i></span></a>
+	    <a href="https://scholar.google.com/citations?user=HWbpF1sAAAAJ&hl=en"><span class="fa-stack fa-2x"><i style="color:black;" class="ai ai-google-scholar"></i></span></a>
+		
+		    <!--
+	        <a href="https://www.gla.ac.uk/schools/computing/researchstudents/jessicaryan/"><img src="uniicon.png"
+		width="40" height="40"
+			-->									 
+	    </a>
+		
+		
+        </div>
+		
+
+        <!--<p><a href="#" class="btn btn-primary">More &raquo;</a></p>-->
+        <i class="expandshow" style="display:none;" id="tab-1">
+            <button class="btn btn-primary btn-lg btn-block" style="width: 100%;" onclick="javascript:$('.allshow').show();$('.noshow').hide();$('.collapseshow').show();$('.expandshow').hide();">EXPAND ALL SECTIONS <span class="glyphicon glyphicon-chevron-down"></span></button>
+        </i>
+        <i class="collapseshow" style="display:none;" id="tab-1">
+            <button class="btn btn-primary btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('.allshow').hide();$('.noshow').show();$('.expandshow').show();$('.collapseshow').hide();">COLLAPSE ALL SECTIONS <span class="glyphicon glyphicon-chevron-up"></span></button>
+        </i>
+
+</div>
+</section>
+
+
+        
+        <!-- Home Section -->
+        <section name="intro" id="intro">
+            <div class="container lead">
+                <div style="text-align: left; margin-top:10px" class="col-md-12">
+                    <!--<h2>Welcome!</h2>-->
+                    
+                    <b class="noshow" style="display:none;" id="tab-1">
+                        <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('#tab-intro-content').toggle();">Introduction <span class="glyphicon glyphicon-chevron-down"></span></button>
+                    </b>
+                    
+                    <div class="allshow" style="display:none;" id="tab-intro-content">
+                        <hr class="star-primary">
+                        
+                        <p class="lead">
+						I am a PhD student of Electrical Engineering at <a target="_blank" href="https://www.wustl.edu/">Washington University in St. Louis. I </a> am a member of <a target="_blank" href="https://span.engineering.wustl.edu/">Sensing and Processing Acroos Networks (SPAN)</a> research group with doctoral supervision from <a target="_blank" href="https://engineering.wustl.edu/Profiles/Pages/Neal-Patwari.aspx">Prof. Neal Patwari</a>. 
+						
+						Prior to my transfer to <a target="_blank" href="https://www.wustl.edu/">WashU</a>, I was a PhD student and completed MS in Electrical and Computer Engineering at the <a target="_blank" href="https://www.utah.edu/">University of Utah</a> from 2015-2018. I also received BS degree in Electrical Engineering with <i>very great distinction</i> from <a target="_blank" href="http://www.aau.edu.et/">Addis Ababa University</a> in 2012.
+                        </p> 
+                        
+						<p>
+                        My primary research interests include RF sensing, signal processing, and wireless networking, particularily systems and algorithms to improve privacy, cost and spectrum efficiency for smart wireless health applications.                     
+                        
+                        <p><a href="cv.html" class="btn-sm btn-primary">CV (Web)&raquo;</a>
+                        <a href="aabrar.pdf" class="btn-sm btn-primary">CV (PDF)&raquo;</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- Research Section -->
+        <section  name="publications" id="publications">
+            <div class="container lead">
+                <div style="text-align: left; margin-top:10px" class="col-md-12">
+                    
+                    <b class="noshow" style="display:none;" id="tab-3">
+                        <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('#tab-publications-content').toggle();">Publications  <span class="glyphicon glyphicon-chevron-down"></span></button>
+                    </b>
+                    <div class="allshow" style="display:none;" id="tab-publications-content">
+                        <hr class="star-primary">
+                        
+                        <h2>Publications </h2>
+
+                        <ul>
+                            <li><span class="label label-success2">IEEE TMC'19</span> <a target="_blank" href="https://ieeexplore.ieee.org/document/8634923">"RSS Models for Respiration Rate Monitoring,"</a> Hüseyin Yiğitler, Ossi Kaltiokallio, Roland Hostettler, Alemayehu Solomon Abrar, Riku Jäntti, Neal Patwari and Simo Särkkä, <b>IEEE Transactions on Mobile Computing</b>, DOI: 10.1109/TMC.2019.2897682, appeared online 5 Feb. 2019. </li>
+                            </li>
+                          <li><span class="label label-success">MobiCom'18</span> <a target="_blank" href="https://dl.acm.org/citation.cfm?id=3241560">"Experience: Cross-Technology Radio Respiratory Monitoring Performance Study,"</a> Peter Hillyard, Anh Luong, Alemayehu Solomon Abrar, Neal Patwari, Krishna Sundar, Robert Farney, and Jason Burch, Christina A. Porucznik, Sarah Pollard, Proceedings of the<b> 24th Annual International Conference on Mobile Computing and Networking (MobiCom'18) </b>, New Delhi, 1 Nov. 2018. </li>
+                          
+						  <li><span class="label label-success">IPSN'18</span> <a target="_blank" href="https://dl.acm.org/citation.cfm?id=3207959">" A Stitch in Time and Frequency Synchronization Saves Bandwidth,"</a> Anh Luong, Peter Hillyard, Alemayehu Solomon Abrar, Charissa Che, Anthony Rowe, Thomas Schmid, and Neal Patwari, Proceedings of the <b>17th ACM/IEEE International Conference on Information Processing in Sensor Networks (IPSN'18)</b>, Porto, Portugal, April 2018. </li>
+						  
+                            <li><span class="label label-success3">MobiCom'17</span> <a target="_blank" href="https://dl.acm.org/citation.cfm?id=3131253">"Poster: Link Line Crossing Speed Estimation with Narrowband Signal Strength,"</a> Alemayehu Solomon Abrar, Anh Luong, Peter Hillyard, and Neal Patwari, Proceedings of the <b>23rd Annual International Conference on Mobile Computing and Networking (MobiCom 2017)</b>, 17 Oct. 2017.
+                            </li>
+                            <li><span class="label label-success3">HotWireless'16</span> <a target="_blank" href="https://dl.acm.org/citation.cfm?id=2980128">"RSSI step size: 1 dB is not enough!,"</a> Anh Luong, Alemayehu Solomon Abrar, Thomas Schmid, and Neal Patwari, Proceedings of the <b>3rd ACM Workshop on Hot Topics in Wireless (HotWireless 2016)</b>, 3 Oct. 2016. 
+                            </li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+	
+	
+	
+	    <!-- Projects Section -->
+        <section  name="projects" id="projects">
+            <div class="container lead">
+                <div style="text-align: left; margin-top:10px" class="col-md-12">
+                    
+                    <b class="noshow" style="display:none;" id="tab-4">
+                        <button class="btn btn-default btn-lg btn-block"  style="display: block; width: 100%;" onclick="javascript:$('#tab-projects-content').toggle();">Projects  <span class="glyphicon glyphicon-chevron-down"></span></button>
+                    </b>
+                    <div class="allshow" style="display:none;" id="tab-courses-content">
+                        <hr class="star-primary">
+                        <h2>Projects</h2>
+							<ul>
+								<div class="container">
+								  
+								  <div align="right" class="col-md-4"><img id="mobile-img" src="images/PlusOneSTTR.png" width="370" border="0" height="172" alt=""><a href="https://span.engineering.wustl.edu/projects.html">Narrowband RF sensing</a></div>
+								  
+								  <div align="right" class="col-md-4"><img id="mobile-img" src="images/smarthelmet.png" width="340" border="0" height="234" alt=""><a href="https://span.engineering.wustl.edu/projects.html">Reducing Traumatic Brain Injury Risk with Impact Compensation</a></div>
+								  
+								  <div align="right" class="col-md-4"><img id="mobile-img" src="images/RadioWindowAttack.png" width="354" border="0" height="234" alt=""><a href="https://span.engineering.wustl.edu/projects.html">Preventing Radio Window Attacks</a></div>
+
+								</div>
+					
+							</ul>
+						
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+	
+	
+	
+	
+	
+ 
+         <!-- Awards Section -->
+         <section  name="awards" id="awards">
+             <div class="container lead">
+                 <div style="text-align: left; margin-top:10px" class="col-md-12">
+                     
+                     <b class="noshow" style="display:none;" id="tab-5">
+                         <button class="btn btn-default btn-lg btn-block"  style="display: block; width: 100%;" onclick="javascript:$('#tab-awards-content').toggle();">Awards  <span class="glyphicon glyphicon-chevron-down"></span></button>
+                     </b>
+                     <div class="allshow" style="display:none;" id="tab-awards-content">
+                         
+                         <hr class="star-primary">
+                         <h2>Awards and Honors </h2>
+                         <ul>
+                             <li>
+                                 <span class="label label-success">B2B</span> <a target="_blank" href="images/b2b.JPG">Runner up</a>,  "Sixth Sensing'', Bench to Bedside Competition (B2B'18), Salt Lake City, UT, USA, April 2018.</span>
+                             </li>
+                             <li>
+                                 <span class="label label-success">AAU</span> <a target="_blank" href="images/aau.JPG">Outstanding Student of Class of 2012</a>, Addis Ababa University, Addis Ababa, Ethiopia, July 2012.</span>
+                             </li>
+
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+         </section>
+
+
+
+        <!-- Service Section -->
+        <section name="service" id="service">
+            
+            <div class="container lead">
+                <div style="text-align: left; margin-top:10px" class="col-md-12">
+                    
+                    <b class="noshow" style="display:none;" id="tab-6">
+                        <button class="btn btn-default btn-lg btn-block"  style="display: block; width: 100%;" onclick="javascript:$('#tab-service-content').toggle();">Service  <span class="glyphicon glyphicon-chevron-down"></span></button>
+                    </b>
+                    <div class="allshow" style="display:none;" id="tab-service-content">
+                        
+                        <hr class="star-primary">
+                        <h2>Professional Service </h2>
+                        <p>
+                        <ul>
+                            <li><b>Invited Reviewer</b>, IEEE Transactions on Biometrics, Behavior, and Identity Science, Nov. 2018.
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        
+        <!-- Contact Section -->
+        <section  name="contact" id="contact">
+            <div class="container lead">
+                <div style="text-align: left; margin-top:10px" class="col-md-12">
+                    
+                    <b class="noshow" style="display:none;" id="tab-7">
+                        <button class="btn btn-default btn-lg btn-block"  style="display: block; width: 100%;" onclick="javascript:$('#tab-contact-content').toggle();">Contact  <span class="glyphicon glyphicon-chevron-down"></span></button>
+                    </b>
+                    <div class="allshow" style="display:none;" id="tab-contact-content">
+                        
+                        <hr class="star-primary">
+                        <h2>Contact</h2>
+                        <div class="container lead">
+                            
+							
+							
+							<div class="widget-wrap"><div class="heading-wrap"><h3><span></span>Alemayehu Solomon Abrar</h3></div>			
+							<div class="textwidget">Graduate Research Assistant<br>
+							Preston M. Green Department of <br>Electrical &amp; Systems Engineering<br>
+							Washington University in St. Louis<p></p><p>
+
+							Green Hall 0161<br>
+							One Brookings Drive <br>
+							St. Louis, MO 63130</p>
+							
+							Email:
+                                <script language="JavaScript">
+                                    <!--
+                                    document.write("&nbsp;");
+                                    spiderjam('alemayehusolomon','wustl.edu');
+                                    -->
+                                    </script><br>
+								<a href="abrar.vcf" class="btn btn-primary">Get VCF Card &raquo;</a>
+								
+							</div>
+									</div></div><div class="span3"></div>  
+
+                            
+                        
+                        </div>
+                        <hr class="star-primary">
+                    </div>
+                    
+                    </section>
+        
+        <hr class="star-primary">
+        <footer>
+            <small>
+                <center>
+                    © 2019 | Alemayehu Solomon Abrar. Credits: AR template
+                    <a onclick="javascript:$('#credit').toggle();"><img border="0" src="images/ccby.png"/></a>
+                    <div style="display:none;" id="credit">[AR template available under Creative Commons CC BY 4.0 licence:
+                        <a href="https://github.com/dmsl/academic-responsive-template" target="_blank">
+                            https://github.com/dmsl/academic-responsive-template
+                        </a> ]
+                    </div>
+                </center>
+            </small>
+        </footer>
+        
+    </body>
+    
 </html>
